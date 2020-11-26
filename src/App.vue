@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <First v-show="isFirst" @changeFlag='changeFlag'></First>
+    <Second v-show="!isFirst" @changeFlag='changeFlag'></Second> -->
+    <!-- <Third></Third> -->
+    <Fourth></Fourth>
+    <!-- <Fifth></Fifth> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import First from './view/first'
+import Second from './view/second'
+import Third from './view/third'
+import Fourth from './view/fourth'
+import Fifth from './view/fifth'
 export default {
-  name: 'App',
+  data() {
+    return {
+      isFirst: true
+    }
+  },
   components: {
-    HelloWorld
+    First,
+    Second,
+    Third,
+    Fourth,
+    Fifth
+  },
+  methods: {
+    changeFlag() {
+      this.isFirst = !this.isFirst
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.button{
+  position: absolute;
+  top: 100px;
+  left: 900px;
+  z-index: 100;
 }
 </style>
